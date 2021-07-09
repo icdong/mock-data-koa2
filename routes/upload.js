@@ -1,9 +1,9 @@
 /*
- * @Description: 上传图片后保存到本地
+ * @Description: 上传图片验证（成功会保存到本地 images 文件夹）
  * @Author: Daito Chai
  * @Date: 2021-07-08 23:01:10
  * @LastEditors: Daito Chai
- * @LastEditTime: 2021-07-09 08:46:15
+ * @LastEditTime: 2021-07-09 23:49:56
  */
 const router = require('koa-router')()
 const multer = require('koa-multer')
@@ -20,7 +20,7 @@ let storage = multer.diskStorage({
 })
 
 // 上传资料图片
-router.post('/upload', multer({ storage }).single('file'), async ctx => {
+router.post('/upload', multer({ storage }).single('file'), ctx => {
     ctx.body = {
         file: ctx.req.file,
         code: 1000,

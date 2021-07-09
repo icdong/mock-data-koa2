@@ -3,7 +3,7 @@
  * @Author: Daito Chai
  * @Date: 2021-07-08 08:43:07
  * @LastEditors: Daito Chai
- * @LastEditTime: 2021-07-09 08:46:42
+ * @LastEditTime: 2021-07-09 23:48:40
  */
 const Koa = require('koa')
 const app = new Koa()
@@ -14,7 +14,6 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 
 const index = require('./routes/index')
-const demo = require('./routes/demo')
 const upload = require('./routes/upload')
 
 // error handler
@@ -47,7 +46,6 @@ app.on('error', (err, ctx) => {
 
 // 注册routes
 app.use(index.routes(), index.allowedMethods())
-app.use(demo.routes(), demo.allowedMethods())
-app.use(upload.routes(), demo.allowedMethods())
+app.use(upload.routes(), upload.allowedMethods())
 
 module.exports = app
