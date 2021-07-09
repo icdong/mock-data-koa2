@@ -7,21 +7,10 @@
  */
 const router = require('koa-router')()
 
-const upload = require('./upload')
-
 router.get('/', async (ctx, next) => {
     await ctx.render('index', {
         title: 'Hello Koa 2!'
     })
-})
-
-// 上传资料图片
-router.post('/upload', upload.single('file'), async ctx => {
-    ctx.body = {
-        file: ctx.req.file,
-        code: 1000,
-        desc: 'success'
-    }
 })
 
 module.exports = router
