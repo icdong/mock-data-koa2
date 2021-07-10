@@ -3,9 +3,8 @@
  * @Author: Daito Chai
  * @Date: 2021-07-08 23:01:10
  * @LastEditors: Daito Chai
- * @LastEditTime: 2021-07-09 23:49:56
+ * @LastEditTime: 2021-07-10 10:38:43
  */
-const router = require('koa-router')()
 const multer = require('koa-multer')
 
 let storage = multer.diskStorage({
@@ -19,13 +18,16 @@ let storage = multer.diskStorage({
     }
 })
 
-// 上传资料图片
-router.post('/upload', multer({ storage }).single('file'), ctx => {
+let upload = multer({ storage }).single('file')
+
+const uploadFun = ctx => {
     ctx.body = {
         file: ctx.req.file,
         code: 1000,
         desc: 'success'
     }
-})
+}
 
-module.exports = router
+module.exports = {
+    upload, uploadFun
+}
