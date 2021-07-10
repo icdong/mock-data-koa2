@@ -1,12 +1,12 @@
-# koa2-icdong
-
 <!--
- * @Description: 基于 koa2 的模拟数据脚手架
+ * @Description:
  * @Author: Daito Chai
- * @Date: 2021-06-04 16:00:13
+ * @Date: 2021-07-10 14:15:55
  * @LastEditors: Daito Chai
- * @LastEditTime: 2021-07-10 14:22:57
+ * @LastEditTime: 2021-07-10 14:27:25
 -->
+
+# 基于 koa2 的模拟数据脚手架
 
 ## 项目说明
 
